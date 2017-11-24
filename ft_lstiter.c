@@ -6,7 +6,7 @@
 /*   By: enunu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 20:55:34 by enunu             #+#    #+#             */
-/*   Updated: 2017/11/21 20:56:47 by enunu            ###   ########.fr       */
+/*   Updated: 2017/11/24 14:36:15 by enunu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_list *node;
-
-	node = lst;
-	while (node)
+	while (lst)
 	{
-		f(node);
-		node = node->next;
+		(*f)(lst);
+		lst = lst->next;
 	}
 }
